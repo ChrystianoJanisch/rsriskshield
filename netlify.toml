@@ -1,0 +1,16 @@
+# Configuração de deploy do site RS Company na Netlify
+# Site estático (HTML/CSS/JS), sem etapa de build.
+
+[build]
+  # Os arquivos do site estão na raiz do repositório.
+  publish = "."
+  # Sem build: é HTML/CSS/JS puro.
+  command = ""
+
+# URLs "limpas" (/contato em vez de /contato.html) — a Netlify já faz
+# isso por padrão (Pretty URLs), mas deixamos explícito.
+[[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
+  force = false
